@@ -1,413 +1,357 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "montserrat", ui-sans-serif;
-    color: #fff;
-}
+/* إضافة هذه الأنماط في نهاية ملف style.css */
 
-*::selection {
-    background-color: white;
-    color: #95c11e;
-
-    html body {
-        height: 100%;
-        width: 100%;
-    }
-
-}
-
-#cursor {
-    height: 20px;
-    width: 20px;
-    background-color: #95c11e;
-    border-radius: 50%;
-    position: fixed;
-    z-index: 99;
-}
-
-#cursor-blur {
-    height: 500px;
-    width: 500px;
-    background-color: rgba(150, 193, 30, 0.3);
-    border-radius: 50%;
-    position: fixed;
-    filter: blur(80px);
-    z-index: 9;
-}
-
-#nav {
-    height: 150px;
+/* صفحة الأنيميشن الجديدة */
+#page5 {
+    min-height: 100vh;
     width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 150px;
-    gap: 80px;
-    position: fixed;
-    justify-content: flex-start;
-    z-index: 999;
-}
-
-#nav img {
-    height: 95px;
-}
-
-#nav h4 {
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-video {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    position: fixed;
-    z-index: -1;
-}
-
-#main {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 80px 50px;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.356);
+    z-index: 10;
 }
 
-#page1 {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    z-index: 99;
-}
-
-#page1 h1 {
+.floating-title {
     font-size: 70px;
     font-weight: 900;
-    margin-top: 80px;
+    text-align: center;
+    margin-bottom: 60px;
     position: relative;
+    color: #b7eb27;
 }
 
-#page1 h1::before {
-    content: "EXPLORE. APPRECIATE. BELONG.";
+.floating-title::before {
+    content: "LA VIE DES ARBRES";
     position: absolute;
     color: #000;
     top: -4px;
     left: -4px;
-    -webkit-text-stroke: 2px #b7eb27;
+    -webkit-text-stroke: 2px #95c11e;
     z-index: -1;
 }
 
-#page1 h2 {
-    font-size: 30px;
-    font-weight: 800;
-    color: #b7eb27;
-    margin-top: 10px;
-    margin-bottom: 30px;
-}
-
-#page1 p {
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 35px;
-    color: #ffffff;
-    width: 50%;
-}
-
-#page2 {
-    min-height: 100vh;
-    width: 100%;
-}
-
-#scroller {
-    white-space: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    position: relative;
-    z-index: 10;
-
-}
-
-#scroller::-webkit-scrollbar {
-    display: none;
-}
-
-#scroller-in {
-    display: inline-block;
-    white-space: nowrap;
-    animation-name: scroll;
-    animation-duration: 60s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-#scroller h4 {
-    display: inline-block;
-    font-size: 6rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    font-family: montserrat, sans-serif;
-    margin-right: 10px;
-    color: black;
-    transition: all linear 0.3s;
-    -webkit-text-stroke: 2px #b7eb27;
-}
-
-#scroller h4:hover {
-    color: #b7eb27;
-}
-
-@keyframes scroll {
-    from {
-        transform: translate(0)
-    }
-    to {
-        transform: translate(-100%);
-    }
-}
-
-#about-us {
-    height: 40vh;
-    width: 100%;
+/* معرض الصور المتحرك */
+.gallery-container {
     display: flex;
-    padding: 0 50px;
-    align-items: center;
-    justify-content: space-around;
-    position: relative;
-    z-index: 99;
-    margin-top: 150px;
-    margin-bottom: 100px;
-}
-
-#about-us img {
-    height: 220px;
-    width: 220px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-#about-us-in {
-    width: 50%;
-    text-align: center;
-}
-
-#about-us-in h3 {
-    font-size: 60px;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-
-#about-us-in p {
-    font-size: 20px;
-    line-height: 40px;
-    color: #bcbcbc;
-}
-
-#about-us-in-name p {
-    text-align: center;
-    margin-top: 15px;
-    color: #b7eb27;
-}
-
-#cards-container {
-    height: 60vh;
-    width: 100%;
-    padding: 0 50px;
-    display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 70px;
-    position: relative;
-    z-index: 99;
+    gap: 30px;
+    margin: 60px 0;
 }
 
-.card {
-    height: 100%;
-    width: 28%;
-    background-color: #b7eb27;
+.animated-img {
+    height: 250px;
+    width: 300px;
     border-radius: 20px;
+    overflow: hidden;
+    position: relative;
     background-size: cover;
     background-position: center;
-    overflow: hidden;
 }
 
-#card1 {
-    background-image: url("Assets/card1.jpg");
+.animated-img:nth-child(1) {
+    background-image: url("Assets/tree1.jpg");
+    animation: float-img-1 8s ease-in-out infinite;
 }
 
-#card2 {
-    background-image: url("Assets/card2.jpg");
+.animated-img:nth-child(2) {
+    background-image: url("Assets/tree2.jpg");
+    animation: float-img-2 7s ease-in-out infinite;
 }
 
-#card3 {
-    background-image: url("Assets/card3.jpg");
+.animated-img:nth-child(3) {
+    background-image: url("Assets/tree3.jpg");
+    animation: float-img-3 9s ease-in-out infinite;
 }
 
-.overlay {
-    height: 100%;
-    width: 100%;
-    background-color: #95c11e;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 120px;
-    text-align: left;
-    opacity: 0;
-    transition: all ease 0.6s;
+.animated-img:nth-child(4) {
+    background-image: url("Assets/tree4.jpg");
+    animation: float-img-1 6s ease-in-out infinite;
 }
 
-.overlay h4 {
-    color: black;
-    font-size: 25px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    font-weight: 800;
+.animated-img:nth-child(5) {
+    background-image: url("Assets/tree5.jpg");
+    animation: float-img-2 8s ease-in-out infinite;
 }
 
-.overlay p {
-    color: black;
-    line-height: 30px;
+.animated-img:nth-child(6) {
+    background-image: url("Assets/tree6.jpg");
+    animation: float-img-3 7s ease-in-out infinite;
 }
 
-.card:hover .overlay {
-    opacity: 1;
+@keyframes float-img-1 {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-20px) rotate(2deg); }
 }
 
-#green-div {
-    height: 30vh;
-    display: flex;
-    margin-top: 100px;
-    align-items: center;
-    background: linear-gradient(to left bottom, #047E30, #b7eb27);
-    justify-content: space-between;
+@keyframes float-img-2 {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-15px) rotate(-1deg); }
 }
 
-#green-div h4 {
-    width: 45%;
-    color: black;
-    line-height: 40px;
+@keyframes float-img-3 {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-25px) rotate(1deg); }
+}
+
+.img-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+
+.animated-img:hover .img-overlay {
+    transform: translateY(0);
+}
+
+.img-overlay h3 {
+    color: #b7eb27;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.img-overlay p {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* قسم الحقائق */
+.facts-section {
+    margin: 80px 0;
     text-align: center;
-    font-size: 25px;
-    font-weight: 800;
-    font-style: oblique;
-    text-transform: uppercase;
-    z-index: 99;
 }
 
-#dot-left {
-    height: 100%;
-    object-fit: cover;
-    width: 14%;
-    transform: scaleX(-1);
-    margin-left: 25px;
-}
-
-#dot-right {
-    height: 100%;
-    object-fit: cover;
-    width: 14%;
-    margin-right: 25px;
-}
-
-#page3 {
-    height: 80vh;
-    width: 100%;
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-#page3 > p {
-    font-size: 22px;
-    font-weight: 800;
-    width: 57%;
-    line-height: 40px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-#page3 img {
-    position: absolute;
-    height: 60px;
-}
-
-#page3 #colon1 {
-    left: 15%;
-    top: 25%;
-
-}
-
-#page3 #colon2 {
-    bottom: 28%;
-    right: 15%;
-
-}
-
-#page4 {
-    height: 50vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    position: relative;
-}
-
-.elem {
-    height: 45%;
-    width: 25%;
-    overflow: hidden;
-    border-radius: 20px;
-    position: relative;
-    z-index: 100;
-}
-
-.elem h2 {
-    height: 100%;
-    background-color: #95c11e;
-    color: #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    z-index: 100;
-    width: 100%;
-    font-size: 40px;
-    font-weight: 800;
-    transition: all ease 0.5s;
-}
-
-
-.elem img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    transition: all ease 0.5s;
-    scale: 1.1;
-}
-
-.elem:hover h2 {
-    color: white;
-    background-color: transparent;
-}
-
-.elem:hover img {
-    scale: 1;
-}
-
-#page4 h1 {
-    font-size: 80px;
-    position: absolute;
-    top: -8%;
+.pulsing-text {
+    font-size: 50px;
     font-weight: 900;
-    color: black;
-    -webkit-text-stroke: 2px #ffffff;
+    color: #ffffff;
+    margin-bottom: 50px;
+    position: relative;
+    animation: pulse 2s ease-in-out infinite;
 }
 
+@keyframes pulse {
+    0%, 100% { 
+        text-shadow: 0 0 20px #b7eb27;
+    }
+    50% { 
+        text-shadow: 0 0 30px #95c11e, 0 0 40px #4CAF50;
+    }
+}
+
+.facts-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.fact-card {
+    width: 250px;
+    background: linear-gradient(135deg, #047E30, #95c11e);
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.fact-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(149, 193, 30, 0.4);
+}
+
+.fact-number {
+    font-size: 60px;
+    font-weight: 900;
+    color: #000;
+    margin-bottom: 15px;
+    -webkit-text-stroke: 2px #ffffff;
+    animation: countUp 2s ease-out forwards;
+}
+
+@keyframes countUp {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.fact-card h3 {
+    font-size: 22px;
+    color: #000;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.fact-card p {
+    color: #000;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+/* دعوة للعمل */
+.call-to-action {
+    text-align: center;
+    margin-top: 100px;
+    padding: 50px;
+    background: linear-gradient(to right, #047E30, #95c11e);
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.glowing-text {
+    font-size: 50px;
+    font-weight: 900;
+    color: #000;
+    margin-bottom: 30px;
+    -webkit-text-stroke: 2px #ffffff;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% { 
+        transform: scale(1);
+        text-shadow: 0 0 10px #fff, 0 0 20px #b7eb27;
+    }
+    100% { 
+        transform: scale(1.05);
+        text-shadow: 0 0 20px #fff, 0 0 30px #95c11e, 0 0 40px #047E30;
+    }
+}
+
+.animated-text {
+    font-size: 18px;
+    color: #000;
+    line-height: 30px;
+    margin-bottom: 40px;
+    animation: slideIn 1.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { 
+        transform: translateX(-100px); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
+.highlight {
+    color: #000;
+    font-weight: 700;
+    font-size: 22px;
+    text-shadow: 1px 1px 2px #ffffff;
+}
+
+.animated-button {
+    background: #000;
+    color: #b7eb27;
+    border: none;
+    padding: 20px 50px;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-button:hover {
+    background: #b7eb27;
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(183, 235, 39, 0.7);
+}
+
+.animated-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.5s;
+}
+
+.animated-button:hover::before {
+    left: 100%;
+}
+
+.button-icon {
+    font-size: 24px;
+}
+
+/* الفوتر المحدث */
 #footer {
     height: 40vh;
     width: 100%;
     background: linear-gradient(to left bottom, #047E30, #95c11e);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 50px;
+}
+
+#footer p {
+    color: #000;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+}
+
+#footer p:first-child {
+    font-size: 22px;
+    font-weight: 700;
+    -webkit-text-stroke: 1px #ffffff;
+}
+
+/* تحسينات للهواتف */
+@media (max-width: 768px) {
+    #page5 {
+        padding: 50px 20px;
+    }
+    
+    .floating-title {
+        font-size: 40px;
+    }
+    
+    .animated-img {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .facts-container {
+        gap: 20px;
+    }
+    
+    .fact-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .glowing-text {
+        font-size: 35px;
+    }
+    
+    .call-to-action {
+        padding: 30px 20px;
+    }
 }
