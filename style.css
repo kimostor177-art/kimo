@@ -1,26 +1,96 @@
-/* صفحة الأنيميشن الجديدة فقط - بنفس المقاييس تماماً */
-
-#page5 {
-    min-height: 100vh;
-    width: 100%;
-    position: relative;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.356);
-}
-
-/* العنوان - نفس مقاييس صفحة 1 */
-#page5 h1 {
-    font-size: 70px;
-    font-weight: 900;
-    text-align: center;
-    padding-top: 80px;
-    margin-bottom: 60px;
-    position: relative;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "montserrat", ui-sans-serif;
     color: #fff;
 }
 
-#page5 h1::before {
-    content: "LA VIE DES ARBRES";
+*::selection {
+    background-color: white;
+    color: #95c11e;
+
+    html body {
+        height: 100%;
+        width: 100%;
+    }
+
+}
+
+#cursor {
+    height: 20px;
+    width: 20px;
+    background-color: #95c11e;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+
+#cursor-blur {
+    height: 500px;
+    width: 500px;
+    background-color: rgba(150, 193, 30, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(80px);
+    z-index: 9;
+}
+
+#nav {
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 150px;
+    gap: 80px;
+    position: fixed;
+    justify-content: flex-start;
+    z-index: 999;
+}
+
+#nav img {
+    height: 95px;
+}
+
+#nav h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+#main {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.356);
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 99;
+}
+
+#page1 h1 {
+    font-size: 70px;
+    font-weight: 900;
+    margin-top: 80px;
+    position: relative;
+}
+
+#page1 h1::before {
+    content: "EXPLORE. APPRECIATE. BELONG.";
     position: absolute;
     color: #000;
     top: -4px;
@@ -29,83 +99,75 @@
     z-index: -1;
 }
 
-/* معرض الصور - نفس مقاييس cards-container بالضبط */
-#page5 .gallery-container {
-    height: 60vh;
-    width: 100%;
-    padding: 0 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 70px;
-    position: relative;
-    z-index: 99;
-}
-
-#page5 .animated-img {
-    height: 100%;
-    width: 28%;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    background-size: cover;
-    background-position: center;
-}
-
-/* الصور الستة - نفس حجم الكروت */
-#page5 .animated-img:nth-child(1) { background-image: url("Assets/card1.jpg"); }
-#page5 .animated-img:nth-child(2) { background-image: url("Assets/card2.jpg"); }
-#page5 .animated-img:nth-child(3) { background-image: url("Assets/card3.jpg"); }
-#page5 .animated-img:nth-child(4) { background-image: url("Assets/case1.jpg"); }
-#page5 .animated-img:nth-child(5) { background-image: url("Assets/case2.jpg"); }
-#page5 .animated-img:nth-child(6) { background-image: url("Assets/case3.jpg"); }
-
-/* أنيميشن خفيف جداً */
-#page5 .animated-img:nth-child(1) { animation: float1 8s infinite; }
-#page5 .animated-img:nth-child(2) { animation: float2 7s infinite; }
-#page5 .animated-img:nth-child(3) { animation: float3 9s infinite; }
-#page5 .animated-img:nth-child(4) { animation: float1 6s infinite; }
-#page5 .animated-img:nth-child(5) { animation: float2 8s infinite; }
-#page5 .animated-img:nth-child(6) { animation: float3 7s infinite; }
-
-@keyframes float1 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-@keyframes float2 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-@keyframes float3 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-
-/* الـ Overlay - نفس مقاييس overlay الكروت */
-#page5 .img-overlay {
-    height: 100%;
-    width: 100%;
-    background-color: #95c11e;
-    padding: 30px;
-    padding-top: 120px;
-    text-align: left;
-    opacity: 0;
-    transition: all ease 0.6s;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-#page5 .img-overlay h4 {
-    color: black;
-    font-size: 25px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
+#page1 h2 {
+    font-size: 30px;
     font-weight: 800;
+    color: #b7eb27;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
-#page5 .img-overlay p {
+#page1 p {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 35px;
+    color: #ffffff;
+    width: 50%;
+}
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;
+}
+
+#scroller {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+
+}
+
+#scroller::-webkit-scrollbar {
+    display: none;
+}
+
+#scroller-in {
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#scroller h4 {
+    display: inline-block;
+    font-size: 6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: montserrat, sans-serif;
+    margin-right: 10px;
     color: black;
-    line-height: 30px;
+    transition: all linear 0.3s;
+    -webkit-text-stroke: 2px #b7eb27;
 }
 
-#page5 .animated-img:hover .img-overlay {
-    opacity: 1;
+#scroller h4:hover {
+    color: #b7eb27;
 }
 
-/* قسم الحقائق - نفس مقاييس about-us */
-#page5 .facts-section {
+@keyframes scroll {
+    from {
+        transform: translate(0)
+    }
+    to {
+        transform: translate(-100%);
+    }
+}
+
+#about-us {
     height: 40vh;
     width: 100%;
     display: flex;
@@ -118,81 +180,100 @@
     margin-bottom: 100px;
 }
 
-#page5 .facts-section img {
+#about-us img {
     height: 220px;
     width: 220px;
     border-radius: 10px;
     object-fit: cover;
 }
 
-#page5 .facts-in {
+#about-us-in {
     width: 50%;
     text-align: center;
 }
 
-#page5 .facts-in h3 {
+#about-us-in h3 {
     font-size: 60px;
     font-weight: 800;
     margin-bottom: 20px;
-    color: #fff;
 }
 
-#page5 .facts-in p {
+#about-us-in p {
     font-size: 20px;
     line-height: 40px;
     color: #bcbcbc;
 }
 
-/* البطاقات الصغيرة - 4 بطاقات */
-#page5 .facts-container {
-    height: 30vh;
+#about-us-in-name p {
+    text-align: center;
+    margin-top: 15px;
+    color: #b7eb27;
+}
+
+#cards-container {
+    height: 60vh;
     width: 100%;
     padding: 0 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 70px;
     position: relative;
     z-index: 99;
 }
 
-#page5 .fact-card {
+.card {
     height: 100%;
-    width: 22%;
-    background: linear-gradient(135deg, #047E30, #95c11e);
+    width: 28%;
+    background-color: #b7eb27;
     border-radius: 20px;
-    padding: 20px;
-    text-align: center;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+#card1 {
+    background-image: url("Assets/card1.jpg");
+}
+
+#card2 {
+    background-image: url("Assets/card2.jpg");
+}
+
+#card3 {
+    background-image: url("Assets/card3.jpg");
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: #95c11e;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 120px;
+    text-align: left;
+    opacity: 0;
     transition: all ease 0.6s;
 }
 
-#page5 .fact-card:hover {
-    transform: translateY(-10px);
+.overlay h4 {
+    color: black;
+    font-size: 25px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 800;
 }
 
-#page5 .fact-number {
-    font-size: 50px;
-    font-weight: 900;
-    color: #000;
-    margin-bottom: 15px;
-    -webkit-text-stroke: 2px #ffffff;
+.overlay p {
+    color: black;
+    line-height: 30px;
 }
 
-#page5 .fact-card h3 {
-    font-size: 18px;
-    color: #000;
-    margin-bottom: 10px;
-    font-weight: 700;
+.card:hover .overlay {
+    opacity: 1;
 }
 
-#page5 .fact-card p {
-    color: #000;
-    font-size: 14px;
-    line-height: 20px;
-}
-
-/* القسم الأخضر - نفس مقاييس green-div */
-#page5 .green-div {
+#green-div {
     height: 30vh;
     display: flex;
     margin-top: 100px;
@@ -201,7 +282,7 @@
     justify-content: space-between;
 }
 
-#page5 .green-div h4 {
+#green-div h4 {
     width: 45%;
     color: black;
     line-height: 40px;
@@ -213,52 +294,120 @@
     z-index: 99;
 }
 
-/* الفوتر - نفس مقاييس footer */
-#page5 .footer {
-    height: 40vh;
+#dot-left {
+    height: 100%;
+    object-fit: cover;
+    width: 14%;
+    transform: scaleX(-1);
+    margin-left: 25px;
+}
+
+#dot-right {
+    height: 100%;
+    object-fit: cover;
+    width: 14%;
+    margin-right: 25px;
+}
+
+#page3 {
+    height: 80vh;
     width: 100%;
-    background: linear-gradient(to left bottom, #047E30, #95c11e);
+    background: #000;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#page3 > p {
+    font-size: 22px;
+    font-weight: 800;
+    width: 57%;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#page3 img {
+    position: absolute;
+    height: 60px;
+}
+
+#page3 #colon1 {
+    left: 15%;
+    top: 25%;
+
+}
+
+#page3 #colon2 {
+    bottom: 28%;
+    right: 15%;
+
+}
+
+#page4 {
+    height: 50vh;
+    width: 100%;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
+    position: relative;
 }
 
-#page5 .footer p {
-    color: #000;
-    font-size: 18px;
-    text-align: center;
-    font-weight: 500;
+.elem {
+    height: 45%;
+    width: 25%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    z-index: 100;
 }
 
-#page5 .footer p:first-child {
-    font-size: 22px;
-    font-weight: 700;
-    -webkit-text-stroke: 1px #ffffff;
+.elem h2 {
+    height: 100%;
+    background-color: #95c11e;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    font-size: 40px;
+    font-weight: 800;
+    transition: all ease 0.5s;
 }
 
-/* للهواتف فقط */
-@media (max-width: 768px) {
-    #page5 .gallery-container {
-        height: auto;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    
-    #page5 .animated-img {
-        width: 45%;
-        height: 200px;
-    }
-    
-    #page5 .facts-container {
-        height: auto;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    
-    #page5 .fact-card {
-        width: 45%;
-        height: 180px;
-    }
+
+.elem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 0.5s;
+    scale: 1.1;
 }
+
+.elem:hover h2 {
+    color: white;
+    background-color: transparent;
+}
+
+.elem:hover img {
+    scale: 1;
+}
+
+#page4 h1 {
+    font-size: 80px;
+    position: absolute;
+    top: -8%;
+    font-weight: 900;
+    color: black;
+    -webkit-text-stroke: 2px #ffffff;
+}
+
+#footer {
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to left bottom, #047E30, #95c11e);
+}         
