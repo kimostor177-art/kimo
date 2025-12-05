@@ -1,25 +1,25 @@
-/* صفحة الأنيميشن الجديدة فقط - بدون تغيير الأنماط الأصلية */
+/* صفحة الأنيميشن الجديدة فقط - بنفس المقاييس تماماً */
 
-/* صفحة الأنيميشن الجديدة */
 #page5 {
     min-height: 100vh;
     width: 100%;
-    padding: 80px 50px;
     position: relative;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.356);
 }
 
-.floating-title {
+/* العنوان - نفس مقاييس صفحة 1 */
+#page5 h1 {
     font-size: 70px;
     font-weight: 900;
     text-align: center;
+    padding-top: 80px;
     margin-bottom: 60px;
     position: relative;
     color: #fff;
 }
 
-.floating-title::before {
+#page5 h1::before {
     content: "LA VIE DES ARBRES";
     position: absolute;
     color: #000;
@@ -29,20 +29,20 @@
     z-index: -1;
 }
 
-/* معرض الصور المتحرك - نفس قياسات الكروت الأصلية */
-.gallery-container {
+/* معرض الصور - نفس مقاييس cards-container بالضبط */
+#page5 .gallery-container {
     height: 60vh;
     width: 100%;
     padding: 0 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 70px;
     position: relative;
     z-index: 99;
 }
 
-.animated-img {
+#page5 .animated-img {
     height: 100%;
     width: 28%;
     border-radius: 20px;
@@ -52,106 +52,100 @@
     background-position: center;
 }
 
-/* صور افتراضية - يجب استبدالها بالصور الحقيقية */
-.animated-img:nth-child(1) {
-    background-image: url("Assets/case1.jpg");
-    animation: float-img-1 8s ease-in-out infinite;
-}
+/* الصور الستة - نفس حجم الكروت */
+#page5 .animated-img:nth-child(1) { background-image: url("Assets/card1.jpg"); }
+#page5 .animated-img:nth-child(2) { background-image: url("Assets/card2.jpg"); }
+#page5 .animated-img:nth-child(3) { background-image: url("Assets/card3.jpg"); }
+#page5 .animated-img:nth-child(4) { background-image: url("Assets/case1.jpg"); }
+#page5 .animated-img:nth-child(5) { background-image: url("Assets/case2.jpg"); }
+#page5 .animated-img:nth-child(6) { background-image: url("Assets/case3.jpg"); }
 
-.animated-img:nth-child(2) {
-    background-image: url("Assets/case2.jpg");
-    animation: float-img-2 7s ease-in-out infinite;
-}
+/* أنيميشن خفيف جداً */
+#page5 .animated-img:nth-child(1) { animation: float1 8s infinite; }
+#page5 .animated-img:nth-child(2) { animation: float2 7s infinite; }
+#page5 .animated-img:nth-child(3) { animation: float3 9s infinite; }
+#page5 .animated-img:nth-child(4) { animation: float1 6s infinite; }
+#page5 .animated-img:nth-child(5) { animation: float2 8s infinite; }
+#page5 .animated-img:nth-child(6) { animation: float3 7s infinite; }
 
-.animated-img:nth-child(3) {
-    background-image: url("Assets/case3.jpg");
-    animation: float-img-3 9s ease-in-out infinite;
-}
+@keyframes float1 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes float2 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes float3 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 
-.animated-img:nth-child(4) {
-    background-image: url("Assets/card1.jpg");
-    animation: float-img-1 6s ease-in-out infinite;
-}
-
-.animated-img:nth-child(5) {
-    background-image: url("Assets/card2.jpg");
-    animation: float-img-2 8s ease-in-out infinite;
-}
-
-.animated-img:nth-child(6) {
-    background-image: url("Assets/card3.jpg");
-    animation: float-img-3 7s ease-in-out infinite;
-}
-
-@keyframes float-img-1 {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
-@keyframes float-img-2 {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-@keyframes float-img-3 {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-.img-overlay {
+/* الـ Overlay - نفس مقاييس overlay الكروت */
+#page5 .img-overlay {
+    height: 100%;
+    width: 100%;
+    background-color: #95c11e;
+    padding: 30px;
+    padding-top: 120px;
+    text-align: left;
+    opacity: 0;
+    transition: all ease 0.6s;
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    transform: translateY(100%);
-    transition: transform 0.5s ease;
 }
 
-.animated-img:hover .img-overlay {
-    transform: translateY(0);
+#page5 .img-overlay h4 {
+    color: black;
+    font-size: 25px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 800;
 }
 
-.img-overlay h3 {
-    color: #b7eb27;
-    font-size: 20px;
-    margin-bottom: 10px;
-    font-weight: 700;
+#page5 .img-overlay p {
+    color: black;
+    line-height: 30px;
 }
 
-.img-overlay p {
-    color: #ffffff;
-    font-size: 14px;
-    line-height: 20px;
+#page5 .animated-img:hover .img-overlay {
+    opacity: 1;
 }
 
-/* قسم الحقائق - بنفس نمط الكروت */
-.facts-section {
-    margin: 100px 0;
+/* قسم الحقائق - نفس مقاييس about-us */
+#page5 .facts-section {
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    padding: 0 50px;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: 99;
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+#page5 .facts-section img {
+    height: 220px;
+    width: 220px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#page5 .facts-in {
+    width: 50%;
     text-align: center;
 }
 
-.pulsing-text {
+#page5 .facts-in h3 {
     font-size: 60px;
     font-weight: 800;
+    margin-bottom: 20px;
     color: #fff;
-    margin-bottom: 50px;
-    position: relative;
 }
 
-.pulsing-text::before {
-    content: "CHIFFRES QUI PARLENT";
-    position: absolute;
-    color: #000;
-    top: -4px;
-    left: -4px;
-    -webkit-text-stroke: 2px #b7eb27;
-    z-index: -1;
+#page5 .facts-in p {
+    font-size: 20px;
+    line-height: 40px;
+    color: #bcbcbc;
 }
 
-.facts-container {
-    height: 40vh;
+/* البطاقات الصغيرة - 4 بطاقات */
+#page5 .facts-container {
+    height: 30vh;
     width: 100%;
     padding: 0 50px;
     display: flex;
@@ -162,71 +156,52 @@
     z-index: 99;
 }
 
-.fact-card {
+#page5 .fact-card {
     height: 100%;
     width: 22%;
     background: linear-gradient(135deg, #047E30, #95c11e);
     border-radius: 20px;
-    padding: 30px 20px;
+    padding: 20px;
     text-align: center;
     transition: all ease 0.6s;
-    position: relative;
-    overflow: hidden;
 }
 
-.fact-card:hover {
+#page5 .fact-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(149, 193, 30, 0.3);
 }
 
-.fact-number {
-    font-size: 60px;
+#page5 .fact-number {
+    font-size: 50px;
     font-weight: 900;
     color: #000;
-    margin-bottom: 20px;
-    -webkit-text-stroke: 2px #ffffff;
-    animation: countUp 2s ease-out;
-}
-
-@keyframes countUp {
-    from { 
-        transform: scale(0.8); 
-        opacity: 0.5; 
-    }
-    to { 
-        transform: scale(1); 
-        opacity: 1; 
-    }
-}
-
-.fact-card h3 {
-    font-size: 22px;
-    color: #000;
     margin-bottom: 15px;
-    font-weight: 700;
-    text-transform: uppercase;
+    -webkit-text-stroke: 2px #ffffff;
 }
 
-.fact-card p {
+#page5 .fact-card h3 {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+#page5 .fact-card p {
     color: #000;
     font-size: 14px;
-    line-height: 22px;
-    font-weight: 500;
+    line-height: 20px;
 }
 
-/* دعوة للعمل - بنفس نمط القسم الأخضر */
-.call-to-action {
+/* القسم الأخضر - نفس مقاييس green-div */
+#page5 .green-div {
     height: 30vh;
     display: flex;
     margin-top: 100px;
     align-items: center;
     background: linear-gradient(to left bottom, #047E30, #b7eb27);
     justify-content: space-between;
-    padding: 0 50px;
-    border-radius: 0;
 }
 
-.glowing-text {
+#page5 .green-div h4 {
     width: 45%;
     color: black;
     line-height: 40px;
@@ -236,111 +211,54 @@
     font-style: oblique;
     text-transform: uppercase;
     z-index: 99;
-    animation: gentleGlow 3s ease-in-out infinite;
 }
 
-@keyframes gentleGlow {
-    0%, 100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
-    50% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); }
-}
-
-.animated-text {
-    width: 45%;
-    color: #000;
-    font-size: 16px;
-    line-height: 25px;
-    text-align: center;
-    font-weight: 600;
-    animation: fadeIn 2s ease-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.highlight {
-    color: #000;
-    font-weight: 700;
-    display: block;
-    margin-top: 10px;
-    font-size: 18px;
-}
-
-.animated-button {
-    background: #000;
-    color: #b7eb27;
-    border: none;
-    padding: 15px 40px;
-    font-size: 18px;
-    font-weight: 700;
-    border-radius: 50px;
-    cursor: pointer;
+/* الفوتر - نفس مقاييس footer */
+#page5 .footer {
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to left bottom, #047E30, #95c11e);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin: 0 auto;
-    transition: all ease 0.5s;
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
+    gap: 20px;
 }
 
-.animated-button:hover {
-    background: #b7eb27;
+#page5 .footer p {
     color: #000;
-    transform: translateX(-50%) scale(1.1);
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
 }
 
-.button-icon {
-    font-size: 20px;
+#page5 .footer p:first-child {
+    font-size: 22px;
+    font-weight: 700;
+    -webkit-text-stroke: 1px #ffffff;
 }
 
-/* تحسينات للهواتف */
+/* للهواتف فقط */
 @media (max-width: 768px) {
-    #page5 {
-        padding: 50px 20px;
-    }
-    
-    .floating-title {
-        font-size: 40px;
-    }
-    
-    .gallery-container {
+    #page5 .gallery-container {
         height: auto;
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 20px;
-        padding: 0 20px;
     }
     
-    .animated-img {
-        width: 100%;
+    #page5 .animated-img {
+        width: 45%;
         height: 200px;
     }
     
-    .facts-container {
+    #page5 .facts-container {
         height: auto;
-        flex-direction: column;
-        gap: 20px;
-        padding: 0 20px;
-    }
-    
-    .fact-card {
-        width: 100%;
-        height: 200px;
-    }
-    
-    .call-to-action {
-        height: auto;
-        flex-direction: column;
-        padding: 30px 20px;
+        flex-wrap: wrap;
         gap: 20px;
     }
     
-    .glowing-text,
-    .animated-text {
-        width: 100%;
+    #page5 .fact-card {
+        width: 45%;
+        height: 180px;
     }
 }
